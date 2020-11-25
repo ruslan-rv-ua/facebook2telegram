@@ -47,7 +47,7 @@ class Posts(BaseModel):
 		return f"Posts({len(self.__root__)} posts)"
 		
 		
-class Settings(BaseModel):
+class Config(BaseModel):
 	posts: Posts = Posts()
 	wait_before_next_update: int = 5 # minutes
 	last_update_datetime: datetime = datetime.now() - timedelta(seconds=wait_before_next_update*60+1)
