@@ -4,9 +4,10 @@ TODO:
 2. ...
 '''
 
-import json
 from datetime import datetime, timedelta
+from logging import log
 from pathlib import Path
+import sys
 from time import sleep
 from urllib.parse import urljoin
 
@@ -67,6 +68,7 @@ class FBConnector():
     def quit_webdriver(self):
         if self.driver is not None:
             self.driver.quit()
+            sleep(2)
             self.driver = None
             logger.info('Webdriver quited')
 
@@ -173,8 +175,7 @@ class FB2Telegram:
                     parse_mode='markdown'
                 )
             except Exception as e:
-                logger.error(f"Can't send... {e}")
-                logger.error(text)
+                logger.exception(f"Can't send...\n{text}")
                 continue
 
 
@@ -186,3 +187,10 @@ def get_app():
         tg_chat_id=credentials('FB2TG_TG_CHAT_ID')
     )
     return app
+
+
+logger.remove()
+logger.add(sys.stdout, colorize=True,
+           # format="<green>{time:YYYY-MM-DD at HH:mm:ss}</green> <level>{message}</level>")
+           format="<level>{level:10}| {message}</level>")
+logger.add('facebook2telegram.log', encoding='utf8', rotation="3 days")
