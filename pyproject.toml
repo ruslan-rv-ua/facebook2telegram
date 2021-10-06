@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "facebook2telegram"
+version = "0.2.0"
+description = ""
+authors = ["Ruslan Iskov <ruslan.rv.ua@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+dynaconf = "^3.1.7"
+loguru = "^0.5.3"
+selenium = "^3.141.0"
+html2text = "^2020.1.16"
+beautifulsoup4 = "^4.10.0"
+mongita = "^1.0.1"
+lxml = "^4.6.3"
+pyTelegramBotAPI = "^4.1.0"
+
+[tool.poetry.dev-dependencies]
+flake8 = "^3.9.2"
+black = "^21.9b0"
+gen-exe = "^0.2.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

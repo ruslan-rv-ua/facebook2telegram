@@ -129,4 +129,9 @@ dmypy.json
 .pyre/
 
 # my own
-*.json
+db/
+Chrome-bin/
+software/
+chromedriver.exe
+# Ignore dynaconf secret files
+.secrets.*
