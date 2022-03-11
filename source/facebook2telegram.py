@@ -73,8 +73,8 @@ class Post:
         footer.decompose()
 
         # post's metadata
-        json_data = article_tag["data-ft"]
-        metadata = json.loads(json_data)
+        metadata = json.loads(article_tag["data-ft"])
+		# https://docs.google.com/spreadsheets/d/11dfj6LJks7C7mLi4eSrrW28K1KabgGiPaYb9Fh5Tj3U/edit#gid=0
 
         return cls(
             html=str(article_tag),

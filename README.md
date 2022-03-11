@@ -2,7 +2,7 @@
 
 1. Expoert requirements:
 
-    poetry export --without-hashes o requirements.txt
+    poetry export --without-hashes o source/requirements.txt
 
 1. Build:
 
